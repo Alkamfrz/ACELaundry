@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/ACELaundry/css/style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -22,7 +22,7 @@
                 <div class="sidebar-brand-text mx-3">ACE Laundry</div>
             </a>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/AceLaundry">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -31,7 +31,7 @@
             <div class="sidebar-heading">
                 Admin
             </div>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry" aria-expanded="true" aria-controls="collapseLaundry">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Laundry</span>
@@ -73,18 +73,6 @@
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/service_price.php">Service Price List</a>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/add_price.php">Add Price</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>courier</span>
-                </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Courier:</h6>
-                        <a class="collapse-item" href="/ACELaundry/screen/courier.php">Add Courier</a>
                     </div>
                 </div>
             </li>
@@ -255,7 +243,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">ACE
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="..." title="Profile Picture">
+                                    <img class="img-profile rounded-circle" src="/AceLaundry/img/undraw_profile.svg" alt="..." title="Profile Picture">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -287,197 +275,63 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800">Pending Laundry</h1>
                     </div>
-
-                    <!-- Content Row -->
+<!-- Content Row -->
                     <div class="row">
+                        <div class="col-lg-12 mb-4">
+                        <?php 
+			// API GET (list of city)
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => "https://api.rajaongkir.com/starter/city",
+				CURLOPT_CUSTOMREQUEST => "GET",
+				CURLOPT_HTTPHEADER => array(
+					"key: 8d923ad9ac9eb0ff0349a6885122d1f3"
+				),
+				CURLOPT_RETURNTRANSFER => true,
+			));
+			$json = curl_exec($curl);
+			curl_close($curl);
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <?php
-                                                include_once('db_connect_supa.php');
-                                                $result = $pdo->query("SELECT SUM(total_price) as sp FROM orderes");
-                                            ?>
-                                            <?php
-                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                echo "<td>" . $row['sp'] . "</td>";
-                                            }
-                                            ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+			//convert json response into php array
+			$data = json_decode($json, TRUE);
+			$cityList = $data["rajaongkir"]["results"];
+			
+			// display raw data
+			// print_r($list);
+		?>
+		
+		<form method="post" action="courier_result.php">
+			<!-- display data become dropdown -->
+			Origin
+			<select name="origin_city">
+				<?php foreach($cityList as $city):?>
+				<option value="<?php echo $city["city_id"];?>"><?php echo $city["city_name"];?></option>
+				<?php endforeach;?>
+			</select>
+			<br />
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <?php
-                                                include_once('db_connect_supa.php');
-                                                $result = $pdo->query("SELECT SUM(total_price) as sp FROM orderes");
-                                            ?>
-                                            <?php
-                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                echo "<td>" . $row['sp'] . "</td>";
-                                            }
-                                            ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            <?php
-                                                include_once('db_connect_supa.php');
-                                                $result = $pdo->query("SELECT SUM(total_price) as sp FROM orderes");
-                                            ?>
-                                            <?php
-                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                echo "<td>" . $row['sp'] . "</td>";
-                                            }
-                                            ?>
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+			<!-- display same data become other dropdown -->
+			Destination
+			<select name="destination_city">
+				<?php foreach($cityList as $city):?>
+				<option value="<?php echo $city["city_id"];?>"><?php echo $city["city_name"];?></option>
+				<?php endforeach;?>
+			</select>
+			<br />
+			<button>Display Cost</button>
+			weight 
+			<select name="weight">
+				<?php for($i=1;$i<=30;$i++):?>
+				<option value="<?php echo $i;?>"><?php echo $i;?></option>
+				<?php endfor;?>
+		</form>
                         </div>
                     </div>
 
-                    <!-- Content Row -->
+                </div>
 
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart">
-
-                                        </canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -519,7 +373,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="/ACELaundry/js/admin.js"></script>
 </body>
 
 </html>
