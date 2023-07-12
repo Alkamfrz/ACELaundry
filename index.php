@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
 </head>
 
 <body id="page-top">
@@ -360,11 +362,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Completed Orders</div>
+                                                In Process Orders</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php
                                                 include_once('db_connect_supa.php');
-                                                $result = $pdo->query("SELECT COUNT(oid) as o FROM orderes WHERE st_id = 3 ");
+                                                $result = $pdo->query("SELECT COUNT(oid) as o FROM orderes WHERE st_id = 2 ");
                                                 ?>
                                                 <?php
                                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -388,7 +390,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Completed Tasks
+                                                Completed Orders
                                             </div>
                                             <div class="row no-gutters align-items-center">
 
@@ -493,8 +495,31 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                        <script>
+                                            // Sample data for the line chart
+                                            var data = {
+                                                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                                                datasets: [{
+                                                    label: 'Sales',
+                                                    data: [500, 750, 900, 550, 800, 650, 100],
+                                                    borderColor: 'blue',
+                                                    borderWidth: 2,
+                                                    fill: false
+                                                }]
+                                            };
+
+                                            // Chart configuration
+                                            var config = {
+                                                type: 'line',
+                                                data: data,
+                                                options: {}
+                                            };
+
+                                            // Create the line chart
+                                            var myChart = new Chart(document.getElementById('myChart'), config);
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -524,9 +549,28 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart">
+                                    <div>
+                                        <canvas id="myAreaChart"></canvas>
+                                        <script>
+                                            // Sample data for the pie chart
+                                            var data = {
+                                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+                                                datasets: [{
+                                                    data: [12, 19, 8, 15, 10],
+                                                    backgroundColor: ['red', 'blue', 'yellow', 'green', 'purple']
+                                                }]
+                                            };
 
+                                            // Chart configuration
+                                            var config = {
+                                                type: 'pie',
+                                                data: data,
+                                                options: {}
+                                            };
+
+                                            // Create the pie chart
+                                            var myChart = new Chart(document.getElementById('myAreaChart'), config);
+                                        </script>
                                         </canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
@@ -580,6 +624,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
@@ -588,7 +633,9 @@
         integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
     <script src="js/admin.js"></script>
+
 </body>
 
 </html>

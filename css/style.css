@@ -10318,3 +10318,7 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
+canvas {
+    width: 80px; /* Adjust the width of the chart canvas */
+    height: 40px; /* Adjust the height of the chart canvas */
+}
