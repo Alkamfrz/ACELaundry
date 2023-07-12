@@ -277,30 +277,61 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Pending Laundry</h1>
                     </div>
-
-                    <!-- Content Row -->
+<!-- Content Row -->
                     <div class="row">
-                        <?php
-                        include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM pending()");
-                        ?>
+                        <div class="col-lg-12 mb-4">
+                        <?php 
+			// API GET (list of city)
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => "https://api.rajaongkir.com/starter/city",
+				CURLOPT_CUSTOMREQUEST => "GET",
+				CURLOPT_HTTPHEADER => array(
+					"key: 8d923ad9ac9eb0ff0349a6885122d1f3"
+				),
+				CURLOPT_RETURNTRANSFER => true,
+			));
+			$json = curl_exec($curl);
+			curl_close($curl);
 
-                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Customer Name</th>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['m_name'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+			//convert json response into php array
+			$data = json_decode($json, TRUE);
+			$cityList = $data["rajaongkir"]["results"];
+			
+			// display raw data
+			// print_r($list);
+		?>
+		
+		<form method="post" action="courier_result.php">
+			<!-- display data become dropdown -->
+			Origin
+			<select name="origin_city">
+				<?php foreach($cityList as $city):?>
+				<option value="<?php echo $city["city_id"];?>"><?php echo $city["city_name"];?></option>
+				<?php endforeach;?>
+			</select>
+			<br />
+
+			<!-- display same data become other dropdown -->
+			Destination
+			<select name="destination_city">
+				<?php foreach($cityList as $city):?>
+				<option value="<?php echo $city["city_id"];?>"><?php echo $city["city_name"];?></option>
+				<?php endforeach;?>
+			</select>
+			<br />
+			<button>Display Cost</button>
+			weight 
+			<select name="weight">
+				<?php for($i=1;$i<=30;$i++):?>
+				<option value="<?php echo $i;?>"><?php echo $i;?></option>
+				<?php endfor;?>
+		</form>
+                        </div>
                     </div>
+
+                </div>
+
                 </div>
             </div>
         </div>

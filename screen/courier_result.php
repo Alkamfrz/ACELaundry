@@ -277,29 +277,54 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Pending Laundry</h1>
                     </div>
-
-                    <!-- Content Row -->
+<!-- Content Row -->
                     <div class="row">
+                        <div class="col-lg-12 mb-4">
                         <?php
-                        include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM pending()");
-                        ?>
+    // get data from previous screen
+    $origin_city = $_POST["origin_city"];
+    $destination_city = $_POST["destination_city"];
 
-                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Customer Name</th>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['m_name'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+    // API POST (display delivery cost)
+    $kurir=array("tiki","pos","jne"	);
+
+    foreach ($kurir as $courir){
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_HTTPHEADER => array(
+                "key: 8d923ad9ac9eb0ff0349a6885122d1f3",
+                "content-type: application/x-www-form-urlencoded"
+            ),
+            //put data origin, destination & courier in this line
+            CURLOPT_POSTFIELDS => "origin=".$origin_city."&destination=".$destination_city."&weight=100&courier=$courir",
+            
+            //note : change jne into tiki / pos to display another courier cost
+
+            CURLOPT_RETURNTRANSFER => true,
+        ));
+        $json = curl_exec($curl);
+        curl_close($curl);
+
+        
+        //convert json response into php array
+        $data = json_decode($json, TRUE);
+        $costList = $data["rajaongkir"]["results"][0]["costs"];
+        
+        // display json data
+        //print_r($costList);
+        // die;
+
+    
+    echo "<ul>";
+            foreach($costList as $cost){
+            echo "<li>".$courir.$cost["service"]."  : Rp.".$cost["cost"][0]["value"]." (".$cost["cost"][0]["etd"]." Days ) </li>";
+            }
+    echo "</ul>";
+}
+?>
+                        </div>
                     </div>
                 </div>
             </div>

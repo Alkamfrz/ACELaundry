@@ -60,21 +60,21 @@
       }
     });
   });
-  l('.dropdown-toggle').on('click', function(e) {
+  l(".dropdown-toggle").on("click", function (e) {
     e.preventDefault();
-    var ldropdownMenu = l(this).next('.dropdown-menu');
-    
+    var ldropdownMenu = l(this).next(".dropdown-menu");
+
     // Toggle dropdown visibility
-    ldropdownMenu.toggleClass('show');
-    
+    ldropdownMenu.toggleClass("show");
+
     // Close other open dropdowns
-    l('.dropdown-menu').not(ldropdownMenu).removeClass('show');
+    l(".dropdown-menu").not(ldropdownMenu).removeClass("show");
   });
 
   // Close dropdown on click outside
-  l(document).on('click', function(e) {
-    if (l(e.target).closest('.dropdown').length === 0) {
-      l('.dropdown-menu').removeClass('show');
+  l(document).on("click", function (e) {
+    if (l(e.target).closest(".dropdown").length === 0) {
+      l(".dropdown-menu").removeClass("show");
     }
   });
 
@@ -93,6 +93,22 @@
       language: {
         searchPlaceholder: "Search...",
         sSearch: "",
-        },
-        });
+      },
+    });
+
+    l('#satuan-form').hide();
+
+    l('#toggle-switch').change(function () {
+        if (l(this).is(':checked')) {
+            l('#satuan-form').show();
+            l('#kiloan-form').hide();
+            
+            l('#toggle-switch-label').text("Satuan");
+        } else {
+            l('#satuan-form').hide();
+            l('#kiloan-form').show();
+            
+            l('#toggle-switch-label').text("Kiloan");
+        }
+    });
 })(jQuery);
