@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ACE Laundry | Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Roboto:300,400,500,700&display=swap"
+        rel="stylesheet">
     <link href="/ACELaundry/css/style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/AceLaundry">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-fw fa-tshirt"></i>
@@ -111,14 +113,17 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" name="sidebarToggle" title="Toggle Menu">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3"
+                        name="sidebarToggle" title="Toggle Menu">
                         <i class="fa fa-bars"></i>
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button" name="search" title="Search">
                                     <i class="fas fa-search fa-sm"></i>
@@ -132,14 +137,18 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button" name="search" title="Search">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -152,13 +161,15 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -201,19 +212,22 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" title="Profile" alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" title="Profile"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -224,7 +238,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" title="Profile" alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" title="Profile"
+                                            alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -246,7 +261,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -263,12 +279,15 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">ACE
-                                    <img class="img-profile rounded-circle" src="/AceLaundry/img/undraw_profile.svg" alt="..." title="Profile Picture">
+                                    <img class="img-profile rounded-circle" src="/AceLaundry/img/undraw_profile.svg"
+                                        alt="..." title="Profile Picture">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -297,38 +316,139 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">New Laundry</h1>
-                    </div>
-
-                    <!-- Toggle -->
-                    <div class="form-group">
-                        <label for="toggle-switch">Select Type:</label>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="toggle-switch">
-                            <label id="toggle-switch-label" class="custom-control-label" for="toggle-switch">Kiloan</label>
-                        </div>
+                        <h1 class="h3 mb-0 text-gray-800">Add Laundry</h1>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-lg-12 mb-4">
-                            <!-- Satuan Form -->
-                            <div id="satuan-form" class="form-group">
                             <form action="create_submit.php" method="post">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="name" class="col-form-label">Customer Name</label>
+                                        <form action="create_submit.php" method="POST">
+                                            <table>
+
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-select" name="continent">
+                                                            <?php
+                                                            include_once('../../db_connect_supa.php');
+                                                            $result = $pdo->query("SELECT * FROM member ORDER BY name");
+
+                                                            ?>
+                                                            <?php
+                                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                                echo "<option value=" . $row['m_id'] . ">" . $row['name'] . "</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">pieces</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="telp" name="telp"
+                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">Note</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="telp" name="telp"
+                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">Date</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="telp" name="telp"
+                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">Weight</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="telp" name="telp"
+                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">Service</label>
+                                        <form action="crud_update_submit.php?id=<?php echo $id ?>" method="POST">
+                                            <table>
+
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-select" name="continent">
+                                                            <?php
+                                                            include_once('../../db_connect_supa.php');
+                                                            $result = $pdo->query("SELECT * FROM services");
+
+                                                            ?>
+                                                            <?php
+                                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                                echo "<option value=" . $row['s_id'] . ">" . $row['name'] . "</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="telp" class="col-form-label">Item name</label>
+                                        <form action="crud_update_submit.php?id=<?php echo $id ?>" method="POST">
+                                            <table>
+
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-select" name="continent">
+                                                            <?php
+                                                            include_once('../../db_connect_supa.php');
+                                                            $result = $pdo->query("SELECT * FROM laundry_price_pcs");
+
+                                                            ?>
+                                                            <?php
+                                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                                echo "<option value=" . $row['l_p_id'] . ">" . $row['item'] . "</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="add_customer">Add Laundry</button>
+                                        <button type="reset" class="btn btn-danger btn-user btn-block">Reset</button>
+                                    </div>
                             </form>
-                            </div>
-
-                            <!-- Kiloan Form -->
-                            <div id="kiloan-form" class="form-group">
-                            <form action="create_submit.php" method="post">
-
-                            </form>                                
-                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <footer class="sticky-footer bg-white">
@@ -342,7 +462,8 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -362,11 +483,12 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"
+        integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="/ACELaundry/js/admin.js"></script>
 </body>
 
