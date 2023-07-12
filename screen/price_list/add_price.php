@@ -30,7 +30,7 @@
             <div class="sidebar-heading">
                 Admin
             </div>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry" aria-expanded="true" aria-controls="collapseLaundry">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Laundry</span>
@@ -61,7 +61,7 @@
             <div class="sidebar-heading">
                 Utils
             </div>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Price list</span>
@@ -70,7 +70,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Price list:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
-                        <a class="collapse-item" href="//ACELaundry/screen/price_list/service_price.php">Service Price List</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/price_list/service_price.php">Service Price List</a>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/add_price.php">Add Price</a>
                     </div>
                 </div>
@@ -246,8 +246,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="..." title="Profile Picture">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">ACE
+                                    <img class="img-profile rounded-circle" src="/AceLaundry/img/undraw_profile.svg" alt="..." title="Profile Picture">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

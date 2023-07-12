@@ -70,7 +70,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Price list:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
-                        <a class="collapse-item" href="//ACELaundry/screen/price_list/service_price.php">Service Price List</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/price_list/service_price.php">Service Price List</a>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/add_price.php">Add Price</a>
                     </div>
                 </div>
