@@ -282,7 +282,7 @@
                     <div class="row">
                         <?php
                         include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM join_test()");
+                        $result = $pdo->query("SELECT * FROM pending()");
                         ?>
 
                         <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
