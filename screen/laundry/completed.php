@@ -304,19 +304,34 @@
                     <div class="row">
                         <?php
                         include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM pending()");
+                        $result = $pdo->query("SELECT * FROM complete()");
                         ?>
 
-                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
+<table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
                                     <th>Customer Name</th>
+                                    <th>Service</th>
+                                    <th>Weight (kg)</th>
+                                    <th>Item Name</th>
+                                    <th>Total price</th>
+                                    <th>Status</th>
+
                             </thead>
                             <tbody>
                                 <?php
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<tr>";
+                                    echo "<td>" . $row['oid'] . "</td>";
+                                    echo "<td>" . $row['o_date'] . "</td>";
                                     echo "<td>" . $row['m_name'] . "</td>";
+                                    echo "<td>" . $row['s_name'] . "</td>";
+                                    echo "<td>" . $row['weight'] . "</td>";
+                                    echo "<td>" . $row['lpp_item'] . "</td>";
+                                    echo "<td>" . $row['total_price'] . "</td>";
+                                    echo "<td>" . $row['stat'] . "</td>";
                                     echo "</tr>";
                                 }
                                 ?>

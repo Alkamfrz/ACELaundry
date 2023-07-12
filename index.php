@@ -14,7 +14,7 @@
     <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    
+
 </head>
 
 <body id="page-top">
@@ -327,22 +327,22 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
+                        <!-- Earnings (Total) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
+                                                Earnings (Total)</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php
                                                 include_once('db_connect_supa.php');
-                                                $result = $pdo->query("SELECT SUM(total_price) as sp FROM orderes");
+                                                $result = $pdo->query("SELECT SUM(price) as sp FROM total_price");
                                                 ?>
                                                 <?php
-                                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                    echo "<td>" . $row['sp'] . "</td>";
+                                                while ($earn = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                    echo "<td>" . $earn['sp'] . "</td>";
                                                 }
                                                 ?>
                                             </div>
@@ -355,7 +355,7 @@
                             </div>
                         </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
+                        <!-- In process Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -369,68 +369,14 @@
                                                 $result = $pdo->query("SELECT COUNT(oid) as o FROM orderes WHERE st_id = 2 ");
                                                 ?>
                                                 <?php
-                                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                    echo "<td>" . $row['o'] . "</td>";
+                                                while ($pros = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                    echo "<td>" . $pros['o'] . "</td>";
                                                 }
                                                 ?>
                                             </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Completed Orders
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php
-                                                        include_once('db_connect_supa.php');
-                                                        $result = $pdo->query("SELECT
-                                                id, id1 + id2 as id1, id3
-                                                FROM (
-                                                    SELECT
-                                                    COUNT(st_id) as id,
-                                                    COUNT(case when st_id = 1 then st_id end) as id1,
-                                                    COUNT(case when st_id = 2 then st_id end) as id2,
-                                                    COUNT(case when st_id = 3 then st_id end) as id3
-                                                FROM orderes
-                                                ) AS subquery");
-                                                        ?>
-                                                        <?php
-                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                            $that = round(($row['id1'] / $row['id']) * 100);
-                                                            echo $that . "%";
-                                                        }
-
-                                                        ?>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo $that . "%"; ?>" aria-valuenow="40"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -452,8 +398,8 @@
                                                 $result = $pdo->query("SELECT COUNT(oid) as o FROM orderes WHERE st_id = 1 ");
                                                 ?>
                                                 <?php
-                                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                                    echo "<td>" . $row['o'] . "</td>";
+                                                while ($pend = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                    echo "<td>" . $pend['o'] . "</td>";
                                                 }
                                                 ?>
                                             </div>
@@ -465,6 +411,65 @@
                                 </div>
                             </div>
                         </div>
+
+                        
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Completed Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                        <?php
+                                                        include_once('db_connect_supa.php');
+                                                        $result = $pdo->query("SELECT
+                                                id, id1 , id2 , id3
+                                                FROM (
+                                                    SELECT
+                                                    COUNT(st_id) as id,
+                                                    COUNT(case when st_id = 1 then st_id end) as id1,
+                                                    COUNT(case when st_id = 2 then st_id end) as id2,
+                                                    COUNT(case when st_id = 3 then st_id end) as id3
+                                                FROM orderes
+                                                ) AS subquery");
+                                                        ?>
+                                                        <?php
+                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                            $a = ($row['id1'] + $row['id2'] + $row['id3']);
+                                                            $com = round(($row['id3'] / $a) * 100);
+                                                            echo $com . "%";
+                                                        }
+
+                                                        ?>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: <?php echo $com . "%"; ?>" aria-valuenow="40"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
 
                     <!-- Content Row -->
@@ -531,7 +536,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Orders Chart</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -551,13 +556,35 @@
                                 <div class="card-body">
                                     <div>
                                         <canvas id="myAreaChart"></canvas>
+                                        <?php
+                                                        include_once('db_connect_supa.php');
+                                                        $result = $pdo->query("SELECT
+                                                id, id1, id2, id3
+                                                FROM (
+                                                    SELECT
+                                                    COUNT(st_id) as id,
+                                                    COUNT(case when st_id = 1 then st_id end) as id1,
+                                                    COUNT(case when st_id = 2 then st_id end) as id2,
+                                                    COUNT(case when st_id = 3 then st_id end) as id3
+                                                FROM orderes
+                                                ) AS subquery");
+                                                        ?>
+                                                        <?php
+                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+                                                            $pend_p = $row['id1'];
+                                                            $pros_p = $row['id2'];
+                                                            $com_p = $row['id3'];
+                                                        }
+
+                                                        ?>
                                         <script>
                                             // Sample data for the pie chart
                                             var data = {
-                                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+                                                labels: ['pending', 'in process', 'completed'],
                                                 datasets: [{
-                                                    data: [12, 19, 8, 15, 10],
-                                                    backgroundColor: ['red', 'blue', 'yellow', 'green', 'purple']
+                                                    data: [<?php echo $pend_p?>, <?php echo $pros_p?>, <?php echo $com_p?>],
+                                                    backgroundColor: ['grey', 'yellow', 'green']
                                                 }]
                                             };
 
@@ -573,19 +600,10 @@
                                         </script>
                                         </canvas>
                                     </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
                                 </div>
+                                
                             </div>
+                            
                         </div>
                     </div>
                 </div>
