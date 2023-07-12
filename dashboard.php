@@ -38,9 +38,9 @@
                 <div id="collapseLaundry" class="collapse" aria-labelledby="headingLaundry" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Laundry:</h6>
-                        <a class="collapse-item" href="/laundry/pending">Pending Laundry</a>
-                        <a class="collapse-item" href="/laundry/complete">Recently Completed</a>
-                        <a class="collapse-item" href="/laundry/create">Add Laundry</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/laundry/pending.php">Pending Laundry</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/laundry/completed.php">Recently Completed</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/laundry/create.php">Add Laundry</a>
                     </div>
                 </div>
             </li>
@@ -52,8 +52,8 @@
                 <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Customer:</h6>
-                        <a class="collapse-item" href="/customer">Customer List</a>
-                        <a class="collapse-item" href="/customer/create">Add Customer</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/customer/customer_list.php">Customer List</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/customer/add_customer.php">Add Customer</a>
                     </div>
                 </div>
             </li>
@@ -62,9 +62,18 @@
                 Utils
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="/pricelist">
-                    <i class="fas fa-fw fa-dollar-sign"></i>
-                    <span>Price List</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Price list</span>
+                </a>
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Price list:</h6>
+                        <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
+                        <a class="collapse-item" href="//ACELaundry/screen/price_list/service_price.php">Service Price List</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/price_list/add_price.php">Add Price</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="reports">
