@@ -278,8 +278,31 @@
                         <h1 class="h3 mb-0 text-gray-800">New Laundry</h1>
                     </div>
 
+                    <!-- Toggle -->
+                    <div class="form-group">
+                        <label for="toggle-switch">Select Type:</label>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="toggle-switch">
+                            <label id="toggle-switch-label" class="custom-control-label" for="toggle-switch">Kiloan</label>
+                        </div>
+                    </div>
+
                     <!-- Content Row -->
                     <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <!-- Satuan Form -->
+                            <div id="satuan-form" class="form-group">
+                            <form action="create_submit.php" method="post">
+                            </form>
+                            </div>
+
+                            <!-- Kiloan Form -->
+                            <div id="kiloan-form" class="form-group">
+                            <form action="create_submit.php" method="post">
+
+                            </form>                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
