@@ -338,6 +338,11 @@
                             </tbody>
                         </table>
                     </div>
+                    <form action="create_submit.php" method="post">
+                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="add_customer">Update Status</button>
+                                    </div>
+                            </form>
                 </div>
             </div>
         </div>
