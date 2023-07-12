@@ -284,25 +284,35 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label for="name" class="col-form-label">Customer Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Customer Name">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="telp" class="col-form-label">Customer Phone</label>
-                                        <input type="text" class="form-control" id="telp" name="telp" placeholder="Customer Phone">
+                                        <div class="col-sm-6">
+                                            <label for="telp" class="col-form-label">Customer Phone</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="fas fa-phone"></i>
+                                                </span>
+                                                <input type="text" class="form-control" id="telp" name="telp" placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <button type="submit" class="btn btn-primary btn-user btn-block" name="add_customer">Add Customer</button>
-                                    <button type="reset" class="btn btn-danger btn-user btn-block">Reset</button>
-                                </div>
+                                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="add_customer">Add Customer</button>
+                                        <button type="reset" class="btn btn-danger btn-user btn-block">Reset</button>
+                                    </div>
                             </form>
                         </div>
                     </div>
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <footer class="sticky-footer bg-white">
