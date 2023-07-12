@@ -384,6 +384,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            this
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
                                             <?php
                                                 include_once('db_connect_supa.php');
                                                 $result = $pdo->query("SELECT SUM(total_price) as sp FROM orderes");
@@ -394,7 +397,6 @@
                                             }
                                             ?>
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
