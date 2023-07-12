@@ -79,12 +79,20 @@
   });
 
   //new datatable
-  l("#dataTable").DataTable({
+  l("#customerTable").DataTable({
     responsive: !0,
-    order: [[0, "desc"]],
+    order: [[0, "asc"]],
     language: {
       searchPlaceholder: "Search...",
       sSearch: "",
     },
-  });
+  }),
+    l("#pendingTable").DataTable({
+      responsive: !0,
+      order: [[0, "desc"]],
+      language: {
+        searchPlaceholder: "Search...",
+        sSearch: "",
+        },
+        });
 })(jQuery);

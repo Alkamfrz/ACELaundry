@@ -285,7 +285,7 @@
                         $result = $pdo->query("SELECT * FROM join_test()");
                         ?>
 
-                        <table border="1" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>Customer Name</th>
