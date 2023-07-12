@@ -8,7 +8,7 @@
     <title>ACE Laundry | Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/ACELaundry/css/style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -21,7 +21,7 @@
                 <div class="sidebar-brand-text mx-3">ACE Laundry</div>
             </a>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -30,7 +30,7 @@
             <div class="sidebar-heading">
                 Admin
             </div>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry" aria-expanded="true" aria-controls="collapseLaundry">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Laundry</span>
@@ -246,7 +246,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ACE
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="..." title="Profile Picture">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -279,7 +279,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Pending</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
@@ -620,7 +620,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
-    <script src="js/admin.js"></script>
+    <script src="/ACELaundry/js/admin.js"></script>
 </body>
 
 </html>
