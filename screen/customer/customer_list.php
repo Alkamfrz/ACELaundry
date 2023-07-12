@@ -14,7 +14,7 @@
 
 <body id="page-top">
     <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/AceLaundry">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-fw fa-tshirt"></i>
@@ -22,7 +22,7 @@
                 <div class="sidebar-brand-text mx-3">ACE Laundry</div>
             </a>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/AceLaundry">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -32,11 +32,13 @@
                 Admin
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry" aria-expanded="true" aria-controls="collapseLaundry">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry"
+                    aria-expanded="true" aria-controls="collapseLaundry">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Laundry</span>
                 </a>
-                <div id="collapseLaundry" class="collapse" aria-labelledby="headingLaundry" data-parent="#accordionSidebar">
+                <div id="collapseLaundry" class="collapse" aria-labelledby="headingLaundry"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Laundry:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/laundry/pending.php">Pending Laundry</a>
@@ -45,12 +47,14 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
+                    aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Customer</span>
                 </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Customer:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/customer/customer_list.php">Customer List</a>
@@ -63,23 +67,41 @@
                 Utils
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
+                    aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Price list</span>
                 </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Price list:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
-                        <a class="collapse-item" href="/ACELaundry/screen/price_list/service_price.php">Service Price List</a>
+                        <a class="collapse-item" href="/ACELaundry/screen/price_list/service_price.php">Service Price
+                            List</a>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/add_price.php">Add Price</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
+                    aria-expanded="true" aria-controls="collapseCustomer">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>courier</span>
+                </a>
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Courier:</h6>
+                        <a class="collapse-item" href="/ACELaundry/screen/courier.php">Add Courier</a>
                     </div>
                 </div>
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle" name="sidebarToggle" type="button" title="Toggle Menu"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" name="sidebarToggle" type="button"
+                    title="Toggle Menu"></button>
             </div>
         </ul>
 
