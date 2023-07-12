@@ -77,4 +77,14 @@
       l('.dropdown-menu').removeClass('show');
     }
   });
+
+  //new datatable
+  l("#dataTable").DataTable({
+    responsive: !0,
+    order: [[0, "desc"]],
+    language: {
+      searchPlaceholder: "Search...",
+      sSearch: "",
+    },
+  });
 })(jQuery);
