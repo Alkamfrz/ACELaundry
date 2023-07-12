@@ -60,4 +60,21 @@
       }
     });
   });
+  l('.dropdown-toggle').on('click', function(e) {
+    e.preventDefault();
+    var ldropdownMenu = l(this).next('.dropdown-menu');
+    
+    // Toggle dropdown visibility
+    ldropdownMenu.toggleClass('show');
+    
+    // Close other open dropdowns
+    l('.dropdown-menu').not(ldropdownMenu).removeClass('show');
+  });
+
+  // Close dropdown on click outside
+  l(document).on('click', function(e) {
+    if (l(e.target).closest('.dropdown').length === 0) {
+      l('.dropdown-menu').removeClass('show');
+    }
+  });
 })(jQuery);
