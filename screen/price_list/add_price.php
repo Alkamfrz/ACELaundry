@@ -296,7 +296,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Customer</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Add Item</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -308,7 +308,7 @@
                                         <label for="name" class="col-form-label">Item</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-user"></i>
+                                                <i class="fas fa-tshirt"></i>
                                             </span>
                                             <input type="text" class="form-control" id="item" name="item" placeholder="" required>
                                         </div>
@@ -317,7 +317,7 @@
                                             <label for="telp" class="col-form-label">Price</label>
                                             <div class="input-group">
                                                 <span class="input-group-text" id="basic-addon1">
-                                                    <i class="fas fa-phone"></i>
+                                                    <i class="fas fa-dollar-sign"></i>
                                                 </span>
                                                 <input type="text" class="form-control" id="price" name="price" placeholder="">
                                             </div>

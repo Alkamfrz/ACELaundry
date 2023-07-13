@@ -14,7 +14,7 @@
 
 <body id="page-top">
     <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/AceLaundry">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-fw fa-tshirt"></i>
@@ -32,13 +32,11 @@
                 Admin
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry"
-                    aria-expanded="true" aria-controls="collapseLaundry">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaundry" aria-expanded="true" aria-controls="collapseLaundry">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Laundry</span>
                 </a>
-                <div id="collapseLaundry" class="collapse" aria-labelledby="headingLaundry"
-                    data-parent="#accordionSidebar">
+                <div id="collapseLaundry" class="collapse" aria-labelledby="headingLaundry" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Laundry:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/laundry/pending.php">Pending Laundry</a>
@@ -48,13 +46,11 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
-                    aria-expanded="true" aria-controls="collapseCustomer">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Customer</span>
                 </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
-                    data-parent="#accordionSidebar">
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Customer:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/customer/customer_list.php">Customer List</a>
@@ -67,13 +63,11 @@
                 Utils
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
-                    aria-expanded="true" aria-controls="collapseCustomer">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Price list</span>
                 </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
-                    data-parent="#accordionSidebar">
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Price list:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/price_list/item_price.php">Item Price List</a>
@@ -84,13 +78,11 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer"
-                    aria-expanded="true" aria-controls="collapseCustomer">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
                     <i class="fas fa-fw fa-user"></i>
                     <span>courier</span>
                 </a>
-                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer"
-                    data-parent="#accordionSidebar">
+                <div id="collapseCustomer" class="collapse" aria-labelledby="headingCustomer" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Courier:</h6>
                         <a class="collapse-item" href="/ACELaundry/screen/courier.php">Add Courier</a>
@@ -100,8 +92,7 @@
 
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle" name="sidebarToggle" type="button"
-                    title="Toggle Menu"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" name="sidebarToggle" type="button" title="Toggle Menu"></button>
             </div>
         </ul>
 
@@ -297,7 +288,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Pending Laundry</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Status</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -306,85 +297,73 @@
                         include_once('../../db_connect_supa.php');
                         $result = $pdo->query("SELECT * FROM pending()");
                         ?>
-
-                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Date</th>
-                                    <th>Customer Name</th>
-                                    <th>Service</th>
-                                    <th>Weight (kg)</th>
-                                    <th>Item Name</th>
-                                    <th>Total price</th>
-                                    <th>Status</th>
-
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['oid'] . "</td>";
-                                    echo "<td>" . $row['o_date'] . "</td>";
-                                    echo "<td>" . $row['m_name'] . "</td>";
-                                    echo "<td>" . $row['s_name'] . "</td>";
-                                    echo "<td>" . $row['weight'] . "</td>";
-                                    echo "<td>" . $row['lpp_item'] . "</td>";
-                                    echo "<td>" . $row['total_price'] . "</td>";
-                                    echo "<td>" . $row['stat'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                        <a href="update_status.php" class="btn btn-primary btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-user-edit"></i>
-                            </span>
-                            <span class="text">Update Status</span>
+                        <div class="col-lg-12 mb-4">
+                            <form action="create_update.php" method="post">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="exampleFormControlSelect1">Customer Name</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="customer_name">
+                                            <?php
+                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                echo "<option value='" . $row['m_name'] . "'>" . $row['m_name'] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="exampleFormControlSelect1">Status</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="status">
+                                            <option value="Pending">Pending</option>
+                                            <option value="Processing">Processing</option>
+                                            <option value="Ready">Ready</option>
+                                            <option value="Delivered">Delivered</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; ACE (Alkam, Christoper, Erlan) 2023</span>
-            </div>
-        </div>
-    </footer>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; ACE (Alkam, Christoper, Erlan) 2023</span>
+                    </div>
+                </div>
+            </footer>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <button class="btn btn-primary" type="button" data-dismiss="modal">Cancel
-                            <i class="fas fa-times fa-fw"></i>
-                        </button>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <button class="btn btn-primary" type="button" data-dismiss="modal">Cancel
+                                    <i class="fas fa-times fa-fw"></i>
+                                </button>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <script src="/ACELaundry/js/admin.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+            <script src="/ACELaundry/js/admin.js"></script>
 </body>
 
 </html>
