@@ -366,7 +366,7 @@
                                         <label for="telp" class="col-form-label">Date</label>
                                         <div class="input-group">
                                             
-                                            <input type="date" class="form-control" id="date" name="date"
+                                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date("Y-m-d");?>"
                                                 placeholder="">
                                         </div>
                                     </div>
