@@ -335,18 +335,18 @@
                                         <label for="telp" class="col-form-label">Date</label>
                                         <div class="input-group">
 
-                                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date("Y-m-d"); ?>" placeholder="">
+                                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date("Y-m-d"); ?>" placeholder="" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Weight</label>
                                         <div class="input-group">
 
-                                            <input type="text" class="form-control" id="weight" name="weight" placeholder="">
+                                            <input type="text" class="form-control" id="weight" name="weight" placeholder="" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="telp" class="col-form-label">Service</label>
+                                        <label for="service" class="col-form-label">Service</label>
                                         <table>
 
                                             <tr>
