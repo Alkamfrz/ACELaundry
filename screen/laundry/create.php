@@ -351,46 +351,38 @@
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">pieces</label>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-phone"></i>
-                                            </span>
-                                            <input type="text" class="form-control" id="telp" name="telp"
+                                            
+                                            <input type="text" class="form-control" id="pieces" name="pieces"
                                                 placeholder="081234567890" pattern="[0-9]{10,12}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Note</label>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-phone"></i>
-                                            </span>
-                                            <input type="text" class="form-control" id="telp" name="telp"
-                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                            
+                                            <input type="text" class="form-control" id="note" name="note"
+                                                placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Date</label>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-phone"></i>
-                                            </span>
-                                            <input type="text" class="form-control" id="telp" name="telp"
-                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                            
+                                            <input type="date" class="form-control" id="date" name="date"
+                                                placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Weight</label>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-phone"></i>
-                                            </span>
-                                            <input type="text" class="form-control" id="telp" name="telp"
-                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                            
+                                            <input type="text" class="form-control" id="weight" name="weight"
+                                                placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Service</label>
-                                        <form action="crud_update_submit.php?id=<?php echo $id ?>" method="POST">
+                                        <form action="create_submit.php?id=<?php echo $id ?>" method="POST">
                                             <table>
 
                                                 <tr>
@@ -414,7 +406,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Item name</label>
-                                        <form action="crud_update_submit.php?id=<?php echo $id ?>" method="POST">
+                                        <form action="create_submit.php?id=<?php echo $id ?>" method="POST">
                                             <table>
 
                                                 <tr>
@@ -436,6 +428,7 @@
                                             </table>
                                         </form>
                                     </div>
+                                    
                                 </div>
                                     <div class="form-group row">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" name="add_customer">Add Laundry</button>
