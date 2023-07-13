@@ -326,7 +326,6 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label for="name" class="col-form-label">Customer Name</label>
-                                        <form action="create_submit.php" method="POST">
                                             <table>
 
                                                 <tr>
@@ -346,14 +345,13 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </form>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">pieces</label>
                                         <div class="input-group">
                                             
                                             <input type="text" class="form-control" id="pieces" name="pieces"
-                                                placeholder="081234567890" pattern="[0-9]{10,12}" required>
+                                                placeholder="10" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -382,7 +380,6 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Service</label>
-                                        <form action="create_submit.php?id=<?php echo $id ?>" method="POST">
                                             <table>
 
                                                 <tr>
@@ -402,11 +399,9 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </form>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="telp" class="col-form-label">Item name</label>
-                                        <form action="create_submit.php?id=<?php echo $id ?>" method="POST">
                                             <table>
 
                                                 <tr>
@@ -426,7 +421,6 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </form>
                                     </div>
                                     
                                 </div>
