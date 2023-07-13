@@ -347,7 +347,51 @@
 }
 ?>
                         </div>
+                        
                     </div>
+                    
+                    <form action="courier_result_add.php" method="post">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="name" class="col-form-label">ADd courier</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                                        </div>
+                                        <form action="courier_result_add.php" method="POST">
+                                            <table>
+
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-select" name="continent">
+                                                            <?php
+                                                            include_once('../db_connect_supa.php');
+                                                            $result = $pdo->query("SELECT * FROM orderes");
+
+                                                            ?>
+                                                            <?php
+                                                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                                echo "<option value=" . $row['oid'] . ">" . $row['oid'] . "</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form> 
+                                    </div>
+                                        <div class="col-sm-6">
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="courier">Add courier</button>
+                                        <button type="reset" class="btn btn-danger btn-user btn-block">Reset</button>
+                                    </div>
+                            </form>
+                        </div>      
                 </div>
             </div>
         </div>
