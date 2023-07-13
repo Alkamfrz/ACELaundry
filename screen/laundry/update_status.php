@@ -297,51 +297,53 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Pending Laundry</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Status</h1>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
-                        <?php
-                        include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM pending()");
-                        ?>
+                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="telp" class="col-form-label">Status</label>
+                                        <table>
 
-                        <table border="1" class="table table-bordered" id="pendingTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Date</th>
-                                    <th>Customer Name</th>
-                                    <th>Service</th>
-                                    <th>Weight (kg)</th>
-                                    <th>Item Name</th>
-                                    <th>Total price</th>
-                                    <th>Status</th>
+                                            <tr>
+                                                <td>
+                                                    <select class="form-select" name="continent">
+                                                        <?php
+                                                        include_once('../../db_connect_supa.php');
+                                                        $result = $pdo->query("SELECT * FROM laundry_status");
 
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['oid'] . "</td>";
-                                    echo "<td>" . $row['o_date'] . "</td>";
-                                    echo "<td>" . $row['m_name'] . "</td>";
-                                    echo "<td>" . $row['s_name'] . "</td>";
-                                    echo "<td>" . $row['weight'] . "</td>";
-                                    echo "<td>" . $row['lpp_item'] . "</td>";
-                                    echo "<td>" . $row['total_price'] . "</td>";
-                                    echo "<td>" . $row['stat'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                        <a href="update_status.php" class="btn btn-primary btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-user-edit"></i>
-                            </span>
-                            <span class="text">Update Status</span>
+                                                        ?>
+                                                        <?php
+                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                            echo "<option value=" . $row['l_s_id'] . ">" . $row['status'] . "</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        <label for="telp" class="col-form-label">Item name</label>
+                                        <table>
+
+                                            <tr>
+                                                <td>
+                                                    <select class="form-select" name="continent">
+                                                        <?php
+                                                        include_once('../../db_connect_supa.php');
+                                                        $result = $pdo->query("SELECT * FROM laundry_price_pcs");
+
+                                                        ?>
+                                                        <?php
+                                                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                            echo "<option value=" . $row['l_p_id'] . ">" . $row['item'] . "</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                     </div>
                 </div>
             </div>
