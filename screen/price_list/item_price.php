@@ -297,26 +297,26 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Service Price</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Item Price</h1>
                     </div>
 <!-- Content Row -->
                     <div class="row">
                     <?php
                         include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("SELECT * FROM laundry_price_kg");
+                        $result = $pdo->query("SELECT * FROM laundry_price_pcs");
                         ?>
                         <table border="1" class="table table-bordered" id="customerTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Quantity (kg) </th>
+                                    <th>Quantity (pcs) </th>
                                     <th>Price</th>
                             </thead>
                             <tbody>
                                 <?php
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<tr>";
-                                    echo "<td>" . $row['lp_k_id'] . "</td>";
-                                    echo "<td>" . $row['price'] . "</td>";
+                                    echo "<td>" . $row['item'] . "</td>";
+                                    echo "<td>" . $row['i_price'] . "</td>";
                                     echo "</tr>";
                                 }
                                 ?>

@@ -8,7 +8,6 @@
     <title>ACE Laundry | Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="/ACELaundry/css/style.css" rel="stylesheet">
 </head>
 
@@ -297,38 +296,45 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Service Price</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Add Customer</h1>
                     </div>
-<!-- Content Row -->
-                    <div class="row">
-                    <?php
-                        include_once('../../db_connect_supa.php');
-                        $result = $pdo->query("INSERT  FROM services");
-                        ?>
-                        <table border="1" class="table table-bordered" id="customerTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Type of service</th>
-                                    <th>Price</th>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['name'] . "</td>";
-                                    echo "<td>" . $row['s_price'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
 
-                        
-                        
-</div>
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <form action="add_price_submit.php" method="post">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="name" class="col-form-label">Item</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="item" name="item" placeholder="" required>
+                                        </div>
+                                    </div>
+                                        <div class="col-sm-6">
+                                            <label for="telp" class="col-form-label">Price</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="fas fa-phone"></i>
+                                                </span>
+                                                <input type="text" class="form-control" id="price" name="price" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="add_item">Add Item</button>
+                                        <button type="reset" class="btn btn-danger btn-user btn-block">Reset</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <footer class="sticky-footer bg-white">
@@ -366,7 +372,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bb7ff56246.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="/ACELaundry/js/admin.js"></script>
 </body>
 
